@@ -13,6 +13,13 @@ public class MenuSistema {
             JOptionPane.showMessageDialog(null, "Acceso denegado.");
             return;
         }
+        //Módulo 0: Configuración
+        if (Configuracion.existeConfiguracion()){
+            Configuracion.cargarConfiguracion();
+        }else {
+            Configuracion.configurarSistema();
+            Configuracion.guardarConfiguracion();
+        }
 
         String[] opciones = {"Configurar Banco", "Gestionar Cajas", "Ver Reportes", "Salir"};
         int eleccion;
@@ -26,7 +33,10 @@ public class MenuSistema {
                 null, opciones, opciones[0]);
 
             switch (eleccion) {
-                case 0: /* Lógica de configuración (escritura en prod.txt) */ break;
+                case 0: /* Lógica de configuración (escritura en prod.txt) */ 
+                    JOptionPane.showMessageDialog(null, 
+                            "La configuracion ya fue realizada");
+                    break;
                 case 1: /* Lógica de gestión de cajas */ break;
                 case 2: /* Lógica de reportes */ break;
             }

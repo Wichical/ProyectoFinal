@@ -1,6 +1,7 @@
 package com.mycompany.proyectofinal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Wichical
@@ -22,5 +23,8 @@ public class ProyectoFinal {
         // Formateo para mostrar al usuario
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         System.out.println("Fecha actual: " + ahora.format(formato));
-    }
+    
+    
 }
+}
+
