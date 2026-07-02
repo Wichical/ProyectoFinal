@@ -21,7 +21,7 @@ public class MenuSistema {
             Configuracion.guardarConfiguracion();
         }
 
-        String[] opciones = {"Configurar Banco", "Gestionar Cajas", "Ver Reportes", "Salir"};
+        String[] opciones = {"Configurar Banco","Crear Tiquete", "Gestionar Cajas", "Ver Reportes", "Salir"};
         int eleccion;
 
         do {
@@ -40,7 +40,7 @@ public class MenuSistema {
                 case 1: /* Lógica de gestión de cajas */ break;
                 case 2: /* Lógica de reportes */ break;
             }
-        } while (eleccion != 3 && eleccion != -1);
+        } while (eleccion != 4 && eleccion != -1);
     }
 
     private static boolean autenticarUsuario() {
