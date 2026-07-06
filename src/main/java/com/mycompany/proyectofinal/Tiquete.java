@@ -16,6 +16,7 @@ public class Tiquete {
     private int edad;
     private String tramite;
     private char tipo;
+    private int cajaAsignada;
 
     private LocalDateTime horaCreacion;
     private LocalDateTime horaAtencion;
@@ -36,6 +37,22 @@ public class Tiquete {
     public String getNombre() {
         return nombre;
     }
+    
+    public String getId() {
+    return id;
+    }
+    public int getEdad() {
+    return edad;
+}
+    public String getTramite() {
+    return tramite;
+}
+    public int getCajaAsignada() {
+    return cajaAsignada;
+}
+    public void setCajaAsignada(int cajaAsignada) {
+    this.cajaAsignada = cajaAsignada;
+}
 
     public char getTipo() {
         return tipo;
@@ -52,6 +69,7 @@ public class Tiquete {
     public void setHoraAtencion(LocalDateTime horaAtencion) {
         this.horaAtencion = horaAtencion;
     }
+    
 
     @Override
     public String toString() {

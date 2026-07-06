@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
  * @author Wichical
  */
 public class MenuSistema {
+    public static SistemaTiquetes sistema = new SistemaTiquetes();
     public static void main(String[] args) {
         // Simulación de login previo
         if (!autenticarUsuario()) {
