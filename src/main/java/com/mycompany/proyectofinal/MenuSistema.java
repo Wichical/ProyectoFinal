@@ -38,7 +38,9 @@ public class MenuSistema {
                     JOptionPane.showMessageDialog(null, 
                             "La configuracion ya fue realizada");
                     break;
-                case 1: /* Lógica de gestión de cajas */ break;
+                case 1: 
+                    GestorTiquetes.crearTiquete();
+                    /* Lógica de gestión de cajas */ break;
                 case 2: /* Lógica de reportes */ break;
             }
         } while (eleccion != 4 && eleccion != -1);
