@@ -1,3 +1,5 @@
+package com.mycompany.proyectofinal;
+
 public class Caja {
 
     private int numero;
