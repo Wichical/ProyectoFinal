@@ -4,27 +4,32 @@ import javax.swing.JOptionPane;
 
 public class Login {
 
+    private static Usuarios[] usuarios = {
+        new Usuarios("admin", "1234"),
+        new Usuarios("cajero", "abcd")
+    };
+
     public static boolean iniciarSesion() {
 
         String usuario = JOptionPane.showInputDialog("Usuario");
 
         String clave = JOptionPane.showInputDialog("Contraseña");
 
-        if ((usuario.equals("admin") && clave.equals("1234"))
-                || (usuario.equals("cajero") && clave.equals("abcd"))) {
+        for (Usuarios u : usuarios) {
 
-            JOptionPane.showMessageDialog(null,
-                    "Bienvenido " + usuario);
+            if (u.getUsuario().equals(usuario)
+                    && u.getContraseña().equals(clave)) {
 
-            return true;
+                JOptionPane.showMessageDialog(null,
+                        "Bienvenido " + usuario);
 
+                return true;
+            }
         }
 
         JOptionPane.showMessageDialog(null,
                 "Usuario o contraseña incorrectos.");
 
         return false;
-
     }
-
 }
