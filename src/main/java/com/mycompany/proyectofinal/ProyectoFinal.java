@@ -1,30 +1,35 @@
 package com.mycompany.proyectofinal;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
-/**
- *
- * @author Wichical
- */
+
 public class ProyectoFinal {
 
     public static void main(String[] args) {
-        // Fecha actual
-        LocalDateTime ahora = LocalDateTime.now();
-        
-        // Fecha de referencia (ejemplo: hace 2 horas)
-        LocalDateTime fechaReferencia = ahora.minusHours(2);
 
-        // Comparación
-        if (ahora.isAfter(fechaReferencia)) {
-            System.out.println("La fecha actual es más reciente que la referencia.");
+        // Mostrar fecha y hora de inicio del sistema
+        LocalDateTime ahora = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        System.out.println("Sistema iniciado: " + ahora.format(formato));
+
+        // Login
+        if (Login.iniciarSesion()) {
+
+            // Si existe un método para cargar la configuración
+            // Configuracion.cargarConfiguracion();
+
+            // Inicia el menú principal
+            MenuSistema.menu();
+
+        } else {
+
+            JOptionPane.showMessageDialog(null,
+                    "No fue posible ingresar al sistema.");
+
         }
 
-        // Formateo para mostrar al usuario
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        System.out.println("Fecha actual: " + ahora.format(formato));
-    
-    
-}
-}
+    }
 
+}
