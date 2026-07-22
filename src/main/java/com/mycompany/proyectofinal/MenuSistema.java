@@ -22,7 +22,7 @@ public class MenuSistema {
             Configuracion.guardarConfiguracion();
         }
 
-        String[] opciones = {"Configurar Banco","Crear Tiquete", "Gestionar Cajas", "Ver Reportes", "Salir"};
+        String[] opciones = {"Configurar Banco","Crear Tiquete", "Tiquere Atendido", "Gestionar Cajas" , "Ver Reportes", "Salir"};
         int eleccion;
 
         do {
@@ -41,9 +41,48 @@ public class MenuSistema {
                 case 1: 
                     GestorTiquetes.crearTiquete();
                     /* Lógica de gestión de cajas */ break;
-                case 2: /* Lógica de reportes */ break;
+                case 2: 
+
+                    int caja = Integer.parseInt(
+                            JOptionPane.showInputDialog(
+                                    "Número de caja"));
+
+                    Tiquete atendido = sistema.atenderTiquete(caja);
+
+                    if (atendido == null) {
+
+                        JOptionPane.showMessageDialog(
+                                null,
+                                "No hay clientes en esa caja.");
+
+                    } else {
+
+                        String mensaje
+                                = "Cliente atendido\n\n"
+                                + atendido.getNombre()
+                                + "\nHora: "
+                                + atendido.getHoraAtencion();
+
+                        Tiquete siguiente
+                                = sistema.tiqueteSiguiente(caja);
+
+                        if (siguiente != null) {
+
+                            mensaje += "\n\nSiguiente cliente:\n"
+                                    + siguiente.getNombre();
+
+                        }else{
+                            mensaje += "\nNo quedan clientes.";
+                        }
+
+                        JOptionPane.showMessageDialog(null,mensaje);
+
+                    }
+                    break;
+                case 3:  /* Gestionar cajas */ break;
+                case 4:  /* Lógica de reportes */ break;
             }
-        } while (eleccion != 4 && eleccion != -1);
+        } while (eleccion != 5 && eleccion != -1);
     }
 
     private static boolean autenticarUsuario() {

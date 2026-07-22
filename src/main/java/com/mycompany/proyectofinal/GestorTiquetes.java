@@ -88,7 +88,7 @@ public class GestorTiquetes {
 
             JOptionPane.showMessageDialog(
                     null,
-                    "Tiquete creado correctamente\n\n"
+                    "Tiquete creado correctamente\n"
                     + "Caja asignada: "
                     + t.getCajaAsignada()
                     + "\nTiene "

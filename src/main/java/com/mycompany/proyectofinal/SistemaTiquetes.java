@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyectofinal;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Santiago
@@ -60,5 +62,30 @@ public class SistemaTiquetes {
         }
 
     }
+    
+    public Tiquete atenderTiquete(int caja){
+        Tiquete tiqueteAtendido = null;
+        
+        if (caja == Configuracion.cajaPreferencial){
+            tiqueteAtendido = preferencial.desencolar();
+        }else if (caja == Configuracion.cajaRapida){
+            tiqueteAtendido = rapida.desencolar();
+        }else{
+            tiqueteAtendido = normal.desencolar();
+        }
+        if (tiqueteAtendido != null){
+            tiqueteAtendido.setHoraAtencion(LocalDateTime.now());
+        }
+        return tiqueteAtendido;
+    }
 
+    public Tiquete tiqueteSiguiente(int caja){
+        if (caja == Configuracion.cajaPreferencial){
+            return preferencial.primero();
+        }else if (caja == Configuracion.cajaRapida){
+            return rapida.primero();
+        }else{
+            return normal.primero();
+        }
+    }
 }
