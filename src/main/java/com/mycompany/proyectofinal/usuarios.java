@@ -1,6 +1,6 @@
 package com.mycompany.proyectofinal;
 
-public class Usuarios {
+public class usuarios {
 
     private String usuario;
     private String contraseña;
