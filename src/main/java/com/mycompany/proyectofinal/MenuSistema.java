@@ -91,4 +91,8 @@ public class MenuSistema {
         // Lógica simple de validación
         return (usuario.equals("admin") && password.equals("1234"));
     }
+
+    static void menu() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

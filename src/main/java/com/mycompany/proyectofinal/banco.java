@@ -1,30 +1,30 @@
 package com.mycompany.proyectofinal;
 
-public class Banco {
+public class banco {
 
     private String nombre;
-    private Caja[] cajas;
-    private Caja cajaPreferencial;
-    private Caja cajaRapida;
+    private caja[] cajas;
+    private caja cajaPreferencial;
+    private caja cajaRapida;
 
-    public Banco(String nombre, int cantidadCajas) {
+    public banco(String nombre, int cantidadCajas) {
 
         this.nombre = nombre;
 
-        cajas = new Caja[cantidadCajas];
+        cajas = new caja[cantidadCajas];
 
         for (int i = 0; i < cantidadCajas; i++) {
-            cajas[i] = new Caja(i + 1);
+            cajas[i] = new caja(i + 1);
         }
 
-        cajaPreferencial = new Caja(Configuracion.cajaPreferencial);
-        cajaRapida = new Caja(Configuracion.cajaRapida);
+        cajaPreferencial = new caja(Configuracion.cajaPreferencial);
+        cajaRapida = new caja(Configuracion.cajaRapida);
 
     }
 
-    public Caja asignarCajaNormal() {
+    public caja asignarCajaNormal() {
 
-        Caja menor = cajas[0];
+        caja menor = cajas[0];
 
         for (int i = 1; i < cajas.length; i++) {
 
@@ -56,7 +56,7 @@ public class Banco {
 
             default:
 
-                Caja caja = asignarCajaNormal();
+                caja caja = asignarCajaNormal();
 
                 caja.getCola().encolar(t);
 

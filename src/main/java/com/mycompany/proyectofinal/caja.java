@@ -1,11 +1,11 @@
 package com.mycompany.proyectofinal;
 
-public class Caja {
+public class caja {
 
     private int numero;
     private Cola cola;
 
-    public Caja(int numero) {
+    public caja(int numero) {
         this.numero = numero;
         this.cola = new Cola();
     }
