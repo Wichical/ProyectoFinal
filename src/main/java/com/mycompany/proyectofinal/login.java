@@ -2,7 +2,7 @@ package com.mycompany.proyectofinal;
 
 import javax.swing.JOptionPane;
 
-public class Login {
+public class login {
 
     private static Usuarios[] usuarios = {
         new Usuarios("admin", "1234"),
