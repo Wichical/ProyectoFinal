@@ -1,6 +1,6 @@
 package com.mycompany.proyectofinal;
 
-public class Caja {
+public class caja {
 
     private int numero;
     private Cola cola;
