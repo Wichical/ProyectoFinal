@@ -1,6 +1,6 @@
 package com.mycompany.proyectofinal;
 
-public class Banco {
+public class banco {
 
     private String nombre;
     private Caja[] cajas;
